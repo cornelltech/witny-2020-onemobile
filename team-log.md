@@ -12,3 +12,4 @@
 ### Work for tomorrow
 * Choose overall the most useful features
 * Make a dichotomy of the features
+* Discuss user personas/archetypes and how it affects the app's design
