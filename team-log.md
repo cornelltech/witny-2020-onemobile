@@ -19,7 +19,7 @@
 * Created a blog post of the major shortcomings of NYC apps
 * Brainstormed different logo types
 * Combined our ideas together for the logo
-*
+* Worked on Codeacademy with Python 2
 *
 ### Work for tomorrow
 *
