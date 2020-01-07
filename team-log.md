@@ -13,3 +13,8 @@
 * Choose overall the most useful features
 * Make a dichotomy of the features
 * Discuss user personas/archetypes and how it affects the app's design
+
+## 1/7/2020
+* Created a blog post of the major shortcomings of NYC apps
+* Brainstormed different logo types
+* Combined our ideas together for the logo
