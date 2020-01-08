@@ -20,10 +20,15 @@
 * Brainstormed different logo types
 * Combined our ideas together for the logo
 * Worked on Codeacademy with Python 2
-*
 ### Work for tomorrow
-*
-*
-*
-*
-*
+* Create a list of "features" and "services" offered by the barious apps and figure which one(s) can be implemented as a WhatsApp bot
+* Pick 5 services and think about a user interface and user experience that would make sense to the user- figure out what information we would need from the user
+
+## 1/8/2020
+### Done today
+* Today, we worked on TwilioQuest to sharpen our Python skills
+* We spoke with Ms. Rachel Connolly to figure out what our next steps were
+* We went on a tour with Ms. Wendy Ju. Her major is mechanical engineering and she builds cars that can operate by themselves. She showed us the Robotics Lab, and the car lab as well as other labs. It was extremely informative.  
+* After the meeting, we created a list of features of the apps that could be implemented in WhatsApp. We also figured out what information we would need from the user for each of the 5 apps
+### Work for tomorrow
+* Learn how to write a bot and set-up a good development environment
