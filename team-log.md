@@ -32,3 +32,15 @@
 * After the meeting, we created a list of features of the apps that could be implemented in WhatsApp. We also figured out what information we would need from the user for each of the 5 apps
 ### Work for tomorrow
 * Learn how to write a bot and set-up a good development environment
+
+## 1/9/2020 
+### Done today
+* Met with Mr. Arnaud Sahuguet to learn how to write the WhatsApp bot and set up a good development environment
+* Discussed various ways to approach the task 
+* Had an interview with the BestFit team where they asked us questions about the college application process, in hopes of gaining different perspectives on the process to improve their app 
+* Created a template code for the WhatsApp bot
+* Began the process of learning how to "scrape" a website
+* Used Collaboratory Google, Twilio, Ngrok, and Python 3 to start working on the "skeleton" of the bot itself
+### Work for tomorrow
+* Continue working on the WhatsApp bot, and work to further advance it from a simple to a more complex bot
+* Work on the WhatsApp bot for it to be able to perform a LOT of functions- goal: impress friends over the weekend
