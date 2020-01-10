@@ -37,10 +37,26 @@
 ### Done today
 * Met with Mr. Arnaud Sahuguet to learn how to write the WhatsApp bot and set up a good development environment
 * Discussed various ways to approach the task 
-* Had an interview with the BestFit team where they asked us questions about the college application process, in hopes of gaining different perspectives on the process to improve their app 
+* Had an interview with the BestFit team where they asked us questions about the college application process, in hopes of gaining different perspectives on the process to improving their app 
 * Created a template code for the WhatsApp bot
 * Began the process of learning how to "scrape" a website
 * Used Collaboratory Google, Twilio, Ngrok, and Python 3 to start working on the "skeleton" of the bot itself
 ### Work for tomorrow
 * Continue working on the WhatsApp bot, and work to further advance it from a simple to a more complex bot
 * Work on the WhatsApp bot for it to be able to perform a LOT of functions- goal: impress friends over the weekend
+
+## 1/10/2020 
+### Done today
+* Met with Mr. Arnaud Sahuguet to discuss the various aspects of the WhatsApp bot
+* Discussed Developement Ops., Data Acquisition, Conversation Bot, Personalization, and another form of the same Conversation Bot (ask for zip, ask for gender, ask for age) 
+* We also received a special script to update the code on the production machine
+* Received special domain for our EC2 machine
+* Compiled list of websites for each feature we want for the bot itself
+* Scrape websites using BeautifulSoup
+* Added location services to the WhatsApp bot
+* Connected to Mr. Arnaud Sahuguet's AWS Server (ssh)
+## Work for Monday
+* Continue to work on scraping websites
+* Make sure websites we have chosen are reliable
+* Divided up tasks for Monday (in case we work from home) 
+
