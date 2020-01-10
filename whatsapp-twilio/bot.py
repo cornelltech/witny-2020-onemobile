@@ -4,6 +4,10 @@ from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 
+# Just for testing.
+@app.route('/')
+def heartbeath():
+  return 'OK'
 
 @app.route('/bot', methods=['POST'])
 def bot():
@@ -16,7 +20,7 @@ def bot():
         r = requests.get('https://api.quotable.io/random')
         if r.status_code == 200:
             data = r.json()
-            quote = f'{data["content"]} ({data["author"]})'
+            quote = '{data["content"]} ({data["author"]})'
         else:
             quote = 'I could not retrieve a quote at this time, sorry.'
         msg.body(quote)
