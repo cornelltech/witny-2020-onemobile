@@ -106,9 +106,9 @@ def bot():
            msg.body(l[i].get('wind'))
            msg.body(l[i].get('humidity'))
       responded = True
-      if 'fir' in message:
+      if 'fri' in message:
        for i in range(0,7):
-          if 'Fir' == l[i].get('day'):
+          if 'Fri' == l[i].get('day'):
            msg.body("New York, NY, United States of America")
            msg.body(l[i].get('day'))
            msg.body(l[i].get('date'))
