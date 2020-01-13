@@ -20,10 +20,43 @@
 * Brainstormed different logo types
 * Combined our ideas together for the logo
 * Worked on Codeacademy with Python 2
-*
 ### Work for tomorrow
-*
-*
-*
-*
-*
+* Create a list of "features" and "services" offered by the barious apps and figure which one(s) can be implemented as a WhatsApp bot
+* Pick 5 services and think about a user interface and user experience that would make sense to the user- figure out what information we would need from the user
+
+## 1/8/2020
+### Done today
+* Today, we worked on TwilioQuest to sharpen our Python skills
+* We spoke with Ms. Rachel Connolly to figure out what our next steps were
+* We went on a tour with Ms. Wendy Ju. Her major is mechanical engineering and she builds cars that can operate by themselves. She showed us the Robotics Lab, and the car lab as well as other labs. It was extremely informative.  
+* After the meeting, we created a list of features of the apps that could be implemented in WhatsApp. We also figured out what information we would need from the user for each of the 5 apps
+### Work for tomorrow
+* Learn how to write a bot and set-up a good development environment
+
+## 1/9/2020 
+### Done today
+* Met with Mr. Arnaud Sahuguet to learn how to write the WhatsApp bot and set up a good development environment
+* Discussed various ways to approach the task 
+* Had an interview with the BestFit team where they asked us questions about the college application process, in hopes of gaining different perspectives on the process to improving their app 
+* Created a template code for the WhatsApp bot
+* Began the process of learning how to "scrape" a website
+* Used Collaboratory Google, Twilio, Ngrok, and Python 3 to start working on the "skeleton" of the bot itself
+### Work for tomorrow
+* Continue working on the WhatsApp bot, and work to further advance it from a simple to a more complex bot
+* Work on the WhatsApp bot for it to be able to perform a LOT of functions- goal: impress friends over the weekend
+
+## 1/10/2020 
+### Done today
+* Met with Mr. Arnaud Sahuguet to discuss the various aspects of the WhatsApp bot
+* Discussed Developement Ops., Data Acquisition, Conversation Bot, Personalization, and another form of the same Conversation Bot (ask for zip, ask for gender, ask for age) 
+* We also received a special script to update the code on the production machine
+* Received special domain for our EC2 machine
+* Compiled list of websites for each feature we want for the bot itself
+* Scrape websites using BeautifulSoup
+* Added location services to the WhatsApp bot
+* Connected to Mr. Arnaud Sahuguet's AWS Server (ssh)
+## Work for Monday
+* Continue to work on scraping websites
+* Make sure websites we have chosen are reliable
+* Divided up tasks for Monday (in case we work from home) 
+
