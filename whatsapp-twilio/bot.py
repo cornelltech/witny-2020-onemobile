@@ -1,8 +1,29 @@
 from flask import Flask, request
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
+import sqlite3
+
 
 app = Flask(__name__)
+
+conn = sqlite3.connect('witny-onenyc.db')
+c = conn.cursor()
+c.execute("CREATE TABLE IF NOT EXISTS users (id varchar(25) PRIMARY KEY, data json)")
+conn.commit()
+
+def update_profile(conn, user_id, profile):
+    c = conn.cursor()
+    c.execute("INSERT OR REPLACE INTO users VALUES (?, ?)", [user_id, json.dumps(profile)])
+    conn.commit()
+
+def get_profile(conn, user_id):
+    c = conn.cursor()
+    c.execute('SELECT data FROM users WHERE id = ?', (user_id,))
+    results = c.fetchone()
+    if results is None:
+        return {}
+    else:
+        return json.loads(list(results)[0])
 
 # Just for testing.
 @app.route('/')
@@ -26,6 +47,12 @@ def bot():
         else:
             quote = 'I could not retrieve a quote at this time, sorry.'
         msg.body(quote)
+        responded = True
+
+    if 'set' in incoming_message:
+        (key, value) = incoming_message.split(' ')[1:]
+        print (key, value)
+        msg.body('test')
         responded = True
     if 'cat' in incoming_msg:
         # return a cat pic
