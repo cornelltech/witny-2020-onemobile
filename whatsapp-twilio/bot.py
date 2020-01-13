@@ -12,8 +12,10 @@ def heartbeath():
 @app.route('/bot', methods=['POST'])
 def bot():
     incoming_msg = request.values.get('Body', '').lower()
+    user_id = request.values.get('From', '').lower()
     resp = MessagingResponse()
     msg = resp.message()
+    print("Message from %s." % user_id)
     responded = False
     if 'quote' in incoming_msg:
         # return a quote
