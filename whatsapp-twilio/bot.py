@@ -25,6 +25,9 @@ def bot():
         # return a cat pic
         msg.media('https://cataas.com/cat')
         responded = True
+    if 'witny' in incoming_msg:
+        msg.body('We need more women in Tech!')
+        responded = True
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry!')
     return str(resp)
