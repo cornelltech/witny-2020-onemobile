@@ -105,11 +105,6 @@ def bot():
         msg.body(direction)
         responded = True
 
-    if 'weather' in message:
-        weather = weather.get_weather(message);
-        msg.body(weather)
-        responded = True
-
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry!')
 
