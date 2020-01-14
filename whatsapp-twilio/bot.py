@@ -16,7 +16,7 @@ def get_db():
 app = Flask(__name__)
 
 
-def create_schema_if_needed()
+def create_schema_if_needed():
     db = get_db()
     c = db.cursor()
     c.execute("CREATE TABLE IF NOT EXISTS users (id varchar(25) PRIMARY KEY, data json)")
@@ -62,11 +62,21 @@ def bot():
         msg.body(quote)
         responded = True
 
-    if 'set' in incoming_message:
-        (key, value) = incoming_message.split(' ')[1:]
+    if 'set' in incoming_msg:
+        (key, value) = incoming_msg.split(' ')[1:]
         print (key, value)
-        msg.body('test')
+        profile = get_profile(user_id)
+        profile[key] = value
+        update_profile(user_id, profile) 
+        msg.body('update')
         responded = True
+
+    if 'profile' in incoming_msg:
+        profile = get_profile(user_id)
+        msg.body(profile)
+        responded = True
+
+
     if 'cat' in incoming_msg:
         # return a cat pic
         msg.media('https://cataas.com/cat')
