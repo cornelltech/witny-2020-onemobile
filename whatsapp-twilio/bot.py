@@ -2,7 +2,10 @@ from flask import Flask, request
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
 import sqlite3
+import json
 from flask import g
+
+### DATABASE STUFF
 
 DATABASE = 'witny-onenyc.db'
 
@@ -11,10 +14,6 @@ def get_db():
     if db is None:
         db = g._database = sqlite3.connect(DATABASE)
     return db
-
-
-app = Flask(__name__)
-
 
 def create_schema_if_needed():
     db = get_db()
@@ -38,7 +37,15 @@ def get_profile(user_id):
     else:
         return json.loads(list(results)[0])
 
-# Just for testing.
+### END OF DATABASE STUFF.
+
+app = Flask(__name__)
+
+# We create the database if it does not exist yet.
+create_schema_if_needed()
+
+### ROUTES 
+
 @app.route('/')
 def heartbeath():
   return 'OK'
@@ -50,7 +57,9 @@ def bot():
     resp = MessagingResponse()
     msg = resp.message()
     print("Message from %s." % user_id)
+
     responded = False
+    
     if 'quote' in incoming_msg:
         # return a quote
         r = requests.get('https://api.quotable.io/random')
@@ -76,18 +85,21 @@ def bot():
         msg.body(profile)
         responded = True
 
-
     if 'cat' in incoming_msg:
         # return a cat pic
         msg.media('https://cataas.com/cat')
         responded = True
+
     if 'witny' in incoming_msg:
         msg.body('We need more women in Tech!')
         responded = True
+  
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry!')
+  
     return str(resp)
 
+### END OF ROUTES.
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
