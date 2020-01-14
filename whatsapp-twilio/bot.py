@@ -2,22 +2,35 @@ from flask import Flask, request
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
 import sqlite3
+from flask import g
+
+DATABASE = 'witny-onenyc.db'
+
+def get_db():
+    db = getattr(g, '_database', None)
+    if db is None:
+        db = g._database = sqlite3.connect(DATABASE)
+    return db
 
 
 app = Flask(__name__)
 
-conn = sqlite3.connect('witny-onenyc.db')
-c = conn.cursor()
-c.execute("CREATE TABLE IF NOT EXISTS users (id varchar(25) PRIMARY KEY, data json)")
-conn.commit()
 
-def update_profile(conn, user_id, profile):
-    c = conn.cursor()
+def create_schema_if_needed()
+    db = get_db()
+    c = db.cursor()
+    c.execute("CREATE TABLE IF NOT EXISTS users (id varchar(25) PRIMARY KEY, data json)")
+    db.commit()
+
+def update_profile(user_id, profile):
+    db = get_db()
+    c = db.cursor()
     c.execute("INSERT OR REPLACE INTO users VALUES (?, ?)", [user_id, json.dumps(profile)])
-    conn.commit()
+    db.commit()
 
-def get_profile(conn, user_id):
-    c = conn.cursor()
+def get_profile(user_id):
+    db = get_db()
+    c = db.cursor()
     c.execute('SELECT data FROM users WHERE id = ?', (user_id,))
     results = c.fetchone()
     if results is None:
