@@ -60,3 +60,26 @@
 * Make sure websites we have chosen are reliable
 * Divided up tasks for Monday (in case we work from home) 
 
+## 1/13/2020
+### Done today
+* Worked collaboratively from home to continue data aqcuisition
+* Updated and added some more features that we want the WhatsApp bot to have
+* Continued to scrape websites
+
+## Work for tomorrow
+* Discuss what we worked on
+* Discuss our progress
+* Figure out what other features the WhatsApp bot needs
+
+## 1/14/2020
+### Done today 
+* Discussed individual tasks
+* Figured out what the WhatsApp bot should consist of (its primary features and what is most important)
+* Used BeautifulSoup to neatly parse more information
+* Added location questions (figure out how many different ways the user can ask how to get to a location) 
+* Trained Luis natural language processing
+## Work for tomorrow
+* Continue working on the bot
+* Continue scraping
+* Continue figuring out how to add various features and detail
+* Continue working on Luis
