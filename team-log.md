@@ -83,3 +83,14 @@
 * Continue scraping
 * Continue figuring out how to add various features and detail
 * Continue working on Luis
+
+## 1/15/2020  
+### Done today
+* Met with Ms. Diana Allegretti and Mr. Andrew and went on a tour
+* We learned about the architecture of the Cornell Tech Campus and the different designs for each individual building
+* We also learned about the history of the campus and sat in on the presentation about the campus' Phase 1 and Phase 2 plans
+* We then walked to the art that was recovered from the hospital that used to be located here 
+* After the meeting concluded, we continued our work on our WhatsApp bot 
+* We tested new locations for our WhatsApp bot to train Luis
+* Worked on Luis to specify directions for the WhatsApp bot
+* Met Ms. Diane Levitt where she discussed her role in the Department of Education System
