@@ -94,3 +94,15 @@
 * We tested new locations for our WhatsApp bot to train Luis
 * Worked on Luis to specify directions for the WhatsApp bot
 * Met Ms. Diane Levitt where she discussed her role in the Department of Education System
+
+## 1/16/2020
+### Done today
+* Met with Mr. Arnaud to discuss our progress
+* Discussed which codes are necessary
+* Completed parking and garbage and alternate side parking (finished 311 website) collection aspect of app
+* Scraped events website
+* Peer reviewed the BestFit group's work and provided feeback and input
+* Worked on creating a hyperlink 
+### Work for tomorrow
+* Meeting in Brooklyn with Erica 
+* Making it so that parking and garbage isn't constantly updated- make it like how school works
