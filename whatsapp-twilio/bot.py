@@ -100,7 +100,7 @@ def bot():
 
     if 'profile' in incoming_msg:
         profile = get_profile(user_id)
-        msg.body(profile)
+        msg.body(json.dumps(profile, sort_keys=True, indent=4))
         responded = True
 
     if 'cat' in incoming_msg:
