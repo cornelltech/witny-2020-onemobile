@@ -44,6 +44,8 @@ app = Flask(__name__)
 # We create the database if it does not exist yet.
 # create_schema_if_needed()
 
+MTA_OUTAGE_DATA = '/home/witny-2020/MTA_outages.txt'
+
 ### ROUTES 
 
 @app.route('/')
@@ -78,6 +80,17 @@ def bot():
         profile[key] = value
         update_profile(user_id, profile) 
         msg.body('update')
+        responded = True
+
+    if 'elevators' in incoming_msg:
+        profile = get_profile(user_id)
+        my_elevators = set(profile.get('my_elevators', '').lower().split(','))
+        out_of_order_elevators = set(line.strip().lower() for line in open(MTA_OUTAGE_DATA))
+        my_out_of_order_elevators = my_elevators & out_of_order_elevators
+        if len(my_out_of_order_elevators) == 0:
+            msg.body('Your elevators are working fine.')
+        else:
+            msg.body("Elevators %s are not working." % str(my_out_of_order_elevators)))
         responded = True
 
     if 'profile' in incoming_msg:
