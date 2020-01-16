@@ -88,9 +88,9 @@ def bot():
         out_of_order_elevators = set(line.strip().lower() for line in open(MTA_OUTAGE_DATA))
         my_out_of_order_elevators = my_elevators & out_of_order_elevators
         if len(my_out_of_order_elevators) == 0:
-            msg.body('Your elevators are working fine.')
+            msg.body('Your elevators are working fine. 😀')
         else:
-            msg.body("Elevators %s are not working." % str(my_out_of_order_elevators)))
+            msg.body("Elevators %s are not working. 🤬" % str(my_out_of_order_elevators))
         responded = True
 
     if 'profile' in incoming_msg:
