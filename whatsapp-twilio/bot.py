@@ -4,6 +4,9 @@ from twilio.twiml.messaging_response import MessagingResponse
 import sqlite3
 import json
 from flask import g
+from datetime import datetime
+import pytz
+import os
 
 ### DATABASE STUFF
 
@@ -86,11 +89,13 @@ def bot():
         profile = get_profile(user_id)
         my_elevators = set(profile.get('my_elevators', '').lower().split(','))
         out_of_order_elevators = set(line.strip().lower() for line in open(MTA_OUTAGE_DATA))
+        timestamp = os.path.getmtime(MTA_OUTAGE_DATA) 
+        last_update = str(datetime.fromtimestamp(timestamp, tz= pytz.timezone('America/New_York')))[0:19]
         my_out_of_order_elevators = my_elevators & out_of_order_elevators
         if len(my_out_of_order_elevators) == 0:
-            msg.body('Your elevators are working fine. 😀')
+            msg.body('Your elevators are working fine. 😀\n as of %s' % last_update)
         else:
-            msg.body("Elevators %s are not working. 🤬" % str(my_out_of_order_elevators))
+            msg.body("Elevators %s are not working. 🤬\n as of %s" % (str(my_out_of_order_elevators), last_update))
         responded = True
 
     if 'profile' in incoming_msg:
