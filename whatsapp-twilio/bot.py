@@ -7,6 +7,9 @@ import time
 import school
 import maps
 
+import garbage
+import parking
+
 data = {
     'school': {
         'time': None,
@@ -75,6 +78,14 @@ def bot():
     if 'cat' in message:
         # return a cat pic
         msg.media('https://cataas.com/cat')
+        responded = True
+        
+    if 'parking' in message:
+        msg.body(parking.get_parking_data())
+        responded = True
+        
+    if 'garbage' in message or 'recycling' in message:
+        msg.body(garbage.get_garbage_data())
         responded = True
 
     if 'school' in message and ('open' in message or 'closed' in message):
