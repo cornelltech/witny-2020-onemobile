@@ -42,7 +42,7 @@ def get_profile(user_id):
 app = Flask(__name__)
 
 # We create the database if it does not exist yet.
-create_schema_if_needed()
+# create_schema_if_needed()
 
 ### ROUTES 
 
