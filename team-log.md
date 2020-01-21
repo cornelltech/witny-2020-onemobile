@@ -106,3 +106,22 @@
 ### Work for tomorrow
 * Meeting in Brooklyn with Erica 
 * Making it so that parking and garbage isn't constantly updated- make it like how school works
+
+## 1/17/2020
+* Met Mr. Arnaud Sahugheut, Erica, Britney, and Maddie at Blue Ridge Labs
+* Participated in a very interesting and inspiring meeting/conversation about pursuiting a career in tech, especially as a woman
+* The conversation inspired and motivated us. It was extremely helpful! We learned so much. 
+* Worked from home to finish up the small details of the WhatsApp Bot after the meeting
+### Work for Tuesday (Monday is a holiday: MLK Birthday)
+* Finish up working on small details that the WhatsApp Bot should consist of
+
+## 1/21/2020
+### Done today
+* Met Mr. Arnaud Sahugheut for a brief discussion about the progress of our WhatsApp bot
+* Worked on Luis
+* Worked on scraping the <p> tags on the NYC Service Website
+* Read a lot of code to find rest APIs to get donation information, etc. 
+ 
+## Work for tomorrow
+* "Prettify" the code
+* Make sure everything is working properly
