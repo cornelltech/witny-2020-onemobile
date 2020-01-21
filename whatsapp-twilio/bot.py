@@ -56,10 +56,22 @@ def bot():
         # return a cat pic
         msg.media('https://cataas.com/cat')
         responded = True
+     
+    msg_to_send = []
+    if 'school' in message:
+        msg_to_send.append(nyc311_data.get_data('school'))
+        responded = True
+    if 'garbage' in message:
+        msg_to_send.append(nyc311_data.get_data('garbage'))
+        responded = True
+    if 'parking' in message:
+        msg_to_send.append(nyc311_data.get_data('parking'))
+        responded = True
         
-     if ('school' in message) or ('garbage' in message) or ('parking' in message):
-        msg.body(nyc311_data.get_data(message))
-        responded = True   
+    msg_to_send_str = ''
+    for line in msg_to_send:
+        msg_to_send_str += (line + '\n')
+    msg.body(msg_to_send_str)
 
     latitude = request.values.get('Latitude')
     if (latitude):
