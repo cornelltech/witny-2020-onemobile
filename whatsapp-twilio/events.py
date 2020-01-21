@@ -23,12 +23,11 @@ def get_all_events_data():
         data_dict['events'] = {'time':None, 'data':None}
     lastTime=data_dict['events']['time']
     if lastTime == None or lastTime + 3600000 < currentTime:
-        print('getting data')
         data = update_all_events_data()
 
         data_dict['events']['time']=currentTime
         data_dict['events']['data']=data
 
-    print('returned data')
+    
     return data_dict['events']['data']
         
