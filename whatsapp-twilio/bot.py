@@ -2,31 +2,8 @@ from flask import Flask, request
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
 
-import time
-
-import school
 import maps
-
-import garbage
-import parking
-
-data = {
-    'school': {
-        'time': None,
-        'data': None,
-    },
-}
-
-def get_school_data():
-    currentTime = time.time()
-    lastTime = data['school']['time']
-    if lastTime == None or lastTime + 3600000 < currentTime:
-        school = school.get_school_data()
-        data['school']['data'] = school
-        data['school']['time'] = currentTime
-        return school
-    return data['school']['data']
-
+import nyc311_data
 
 def get_directions(message):
     message = message.split()
@@ -80,17 +57,9 @@ def bot():
         msg.media('https://cataas.com/cat')
         responded = True
         
-    if 'parking' in message:
-        msg.body(parking.get_parking_data())
-        responded = True
-        
-    if 'garbage' in message or 'recycling' in message:
-        msg.body(garbage.get_garbage_data())
-        responded = True
-
-    if 'school' in message and ('open' in message or 'closed' in message):
-        msg.body(get_school_data())
-        responded = True
+     if ('school' in message) or ('garbage' in message) or ('parking' in message):
+        msg.body(nyc311_data.get_data(message))
+        responded = True   
 
     latitude = request.values.get('Latitude')
     if (latitude):
