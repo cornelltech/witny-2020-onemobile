@@ -68,10 +68,6 @@ def bot():
         msg_to_send.append(nyc311_data.get_data('parking'))
         responded = True
         
-    msg_to_send_str = ''
-    for line in msg_to_send:
-        msg_to_send_str += (line + '\n')
-    msg.body(msg_to_send_str)
 
     latitude = request.values.get('Latitude')
     if (latitude):
@@ -97,7 +93,12 @@ def bot():
         msg.body(direction)
         responded = True
 
-    if not responded:
+    if responded:
+        msg_to_send_str = ''
+        for line in msg_to_send:
+            msg_to_send_str += (line + '\n')
+        msg.body(msg_to_send_str)
+    else: 
         msg.body('I only know about famous quotes and cats, sorry!')
 
     return str(resp)
