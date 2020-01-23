@@ -6,6 +6,7 @@ import maps
 import nyc311_data
 import predict
 import donation
+import events
 
 user_data = {}
 
@@ -63,9 +64,11 @@ def bot_response(message_object):
                     a = latitude + ',' + longitude
                 else:
                     a = message
-                print(a)
                 query_data = user_data[user]['query_data']
                 msg_to_send = maps.get_directions_a_to_b(a, query_data)
+                user_data[user]['query'] = None
+            elif query == 'events':
+                msg_to_send = events_response(message)
                 user_data[user]['query'] = None
             else:
                 msg_to_send = "Sorry, I don't understand."
@@ -91,6 +94,14 @@ def bot_response(message_object):
         if (user not in user_data): user_data[user] = {}
         user_data[user]['query'] = 'donate'
         return msg_to_send
+        
+    if 'event' in message:
+        msg_to_send = events_response(message)
+        if msg_to_send == '':
+            msg_to_send = 'What borough are you looking for events in?'
+            if (user not in user_data): user_data[user] = {}
+            user_data[user]['query'] = 'events'    
+        return msg_to_send
      
     if 'school' in message:
         msg_to_send.append(nyc311_data.get_data('school'))
@@ -100,6 +111,23 @@ def bot_response(message_object):
         msg_to_send.append(nyc311_data.get_data('parking'))
     
     return msg_to_send
+
+def events_response(message):
+    if 'manhattan' in message:
+            msg_to_send = events.get_events_borough('manhattan')
+    elif 'queens' in message:
+        msg_to_send = events.get_events_borough('queens')
+    elif 'bronx' in message:
+        msg_to_send = events.get_events_borough('bronx')
+    elif 'staten island' in message:
+        msg_to_send = events.get_events_borough('staten island')
+    elif 'brooklyn' in message:
+        msg_to_send = events.get_events_borough('brooklyn')
+    else:
+        return ''
+    return msg_to_send
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
