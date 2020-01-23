@@ -10,6 +10,6 @@ def get_directions_a_to_b(a, b):
 
     msg = []
     for i in range(len(data)):
-        msg.append(data[i]['instruction']['text'])
+        msg.append(i + '. ' + data[i]['instruction']['text'])
 
     return msg
