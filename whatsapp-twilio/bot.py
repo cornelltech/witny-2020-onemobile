@@ -64,6 +64,7 @@ def bot_response(message_object):
                     a = latitude + ',' + longitude
                 else:
                     a = message
+                print(a)
                 query_data = user_data[user]['query_data']
                 msg_to_send = maps.get_directions_a_to_b(a, query_data)
                 user_data[user]['query'] = None
@@ -76,6 +77,19 @@ def bot_response(message_object):
 
     if not message:
         return
+
+    if message.strip() == '🐰':
+        return '''Here’s what I can do: 
+
+- Ask me for directions
+- Ask me if schools are open or closed
+- Ask me if alternate side parking is in effect
+- Ask me about garbage collection
+- Ask me about events near you
+- Ask me about donation centers near you 
+
+I am a work in progress, more features coming soon!'''
+
     data = predict.luis(message)
     if data and data['top_intent'] == 'directions':
         if len(data['data']) > 1:
@@ -94,7 +108,7 @@ def bot_response(message_object):
         if (user not in user_data): user_data[user] = {}
         user_data[user]['query'] = 'donate'
         return msg_to_send
-        
+
     if 'event' in message:
         msg_to_send = events_response(message)
         if msg_to_send == '':
@@ -126,8 +140,6 @@ def events_response(message):
     else:
         return ''
     return msg_to_send
-
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

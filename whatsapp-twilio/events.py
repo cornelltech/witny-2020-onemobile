@@ -92,7 +92,13 @@ def get_events_borough(borough):
     data = get_events_data_borough(borough)
     count = len(data)
     get_events =['Here some upcoming events in ' + borough + ': \n']
+    if count > 10: count = 10
     for i in range(count):
-        get_events.append(str(i+1)+'. '+data[i]['name']+'\n'+data[i]['address']+'\n')
-        #print(get_events.append(str(i+1)+'. '+data[i]['name']+'\n'+data[i]['address']+'\n'))
+        get_events.append(str(i+1)+'. '+
+        data[i]['name']+'\n'+
+        data[i]['address']+'\n' +
+        data[i]['datePart'] + ' ' +
+        data[i]['timePart'] + '\n' +
+        data[i]['permalink'] + '\n'
+        )
     return get_events
