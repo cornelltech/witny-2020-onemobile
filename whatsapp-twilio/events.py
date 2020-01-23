@@ -1,8 +1,9 @@
 import requests
+import requests
 import time
 
 data_dict={
-
+    
 }
 
 def update_all_events_data():
@@ -64,8 +65,7 @@ def group_by_boroughs():
     data_dict['events']['sIsland'] = sIsland
 
 
-def get_events_boroughs(boroughs):
-    
+def get_events_data_borough(boroughs):
     if boroughs == 'manhattan':
         return data_dict['events']['manhattan']
     elif boroughs == 'brooklyn':
@@ -76,3 +76,23 @@ def get_events_boroughs(boroughs):
         return data_dict['events']['queens']
     elif boroughs == 'staten island':
         return data_dict['events']['sIsland']
+
+
+def get_events_borough(borough):
+
+    currentTime = time.time()
+    if time not in data_dict:
+        data_dict['time'] = None
+    lastTime = data_dict['time']
+    if lastTime == None or lastTime + 3600000 < currentTime:
+        get_all_events_data()
+        group_by_boroughs()
+        data_dict['time'] = currentTime
+
+    data = get_events_data_borough(borough)
+    count = len(data)
+    get_events =['Here some upcoming events in ' + borough + ': \n']
+    for i in range(count):
+        get_events.append(str(i+1)+'. '+data[i]['name']+'\n'+data[i]['address']+'\n')
+        #print(get_events.append(str(i+1)+'. '+data[i]['name']+'\n'+data[i]['address']+'\n'))
+    return get_events
